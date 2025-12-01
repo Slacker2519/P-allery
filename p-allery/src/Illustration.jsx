@@ -1,10 +1,16 @@
-const Illustration = () => {
+const Illustration = (props) => {
+    const { illustration } = props;
+
     return (
         <div>
-            <img src="https://pbs.twimg.com/media/GHBBZuObwAEiiDD?format=jpg&name=4096x4096"
-                 alt="BALALAIKA / 9Lana" className="max-w-64 h-auto min-w-24 rounded-lg"/>
+            <img
+                id={illustration.id}
+                src={illustration.imageUrl}
+                alt={illustration.description}
+                className="illustration"
+            />
         </div>
     );
-};
+}
 
 export default Illustration;
