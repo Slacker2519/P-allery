@@ -2,7 +2,7 @@ import Gallery from "./Gallery.jsx";
 
 const Body = () => {
     return (
-        <div className="w-screen overflow-y-auto">
+        <div className="w-screen overflow-y-auto px-5">
             <Gallery />
         </div>
     );
