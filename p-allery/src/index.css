@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /*:root {*/
 /*  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;*/
@@ -71,18 +72,26 @@
 
 @layer components {
     .header {
-        @apply p-3 px-5 z-50 w-screen flex flex-auto items-center justify-between sticky top-0 bg-white
+        @apply px-5 py-3 z-50 w-full flex items-center justify-between sticky
+        top-0
     }
 
     .illustration {
-        @apply break-inside-avoid mb-3 rounded-lg overflow-hidden
+        @apply break-inside-avoid rounded-lg overflow-hidden
     }
 
     .gallery {
-        @apply columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-3
+        @apply columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-2
     }
+}
 
-    .icon {
-        @apply text-xl xl:text-2xl
+@theme {
+    --color-dark: #242424;
+    --color-light: #F4F3F2;
+}
+
+@layer base {
+    button {
+        @apply p-2 hover:bg-dark/20 dark:hover:bg-white/20 rounded-lg
     }
 }
