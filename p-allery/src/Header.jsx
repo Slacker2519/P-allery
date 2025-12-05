@@ -9,7 +9,7 @@ const Header = (props) => {
             <button>
                 <i className="fa-solid fa-bars text-xl xl:text-2xl"></i>
             </button>
-            <div className="hidden md:flex items-center border-3 rounded-full w-xl h-10 px-3 py-5">
+            <div className="hidden md:flex search-bar">
                 <i className="fa-solid fa-magnifying-glass text-xl m-2"></i>
                 <input type="text" className="w-xl outline-none"/>
             </div>

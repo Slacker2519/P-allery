@@ -1,9 +1,11 @@
 const Illustration = (props) => {
-    const { illustration } = props;
+    const { illustration, onClick } = props;
 
     return (
         <div>
-            <button className="mb-2">
+            <button
+                onClick={ onClick }
+                className="mb-1">
                 <img
                     id={illustration.id}
                     src={illustration.imageUrl}

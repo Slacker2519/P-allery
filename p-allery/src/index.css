@@ -72,7 +72,7 @@
 
 @layer components {
     .header {
-        @apply px-5 py-3 z-50 w-full flex items-center justify-between sticky
+        @apply px-5 py-3 w-full flex items-center justify-between sticky
         top-0
     }
 
@@ -83,6 +83,10 @@
     .gallery {
         @apply columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-2
     }
+
+    .search-bar {
+        @apply items-center border-3 rounded-full w-xl h-10 px-3 py-5
+    }
 }
 
 @theme {
@@ -92,6 +96,8 @@
 
 @layer base {
     button {
-        @apply p-2 hover:bg-dark/20 dark:hover:bg-white/20 rounded-lg
+        @apply p-2 hover:bg-dark/20 dark:hover:bg-white/20
+        hover:shadow-lg shadow-dark/20 dark:hover:shadow-light/20
+        cursor-pointer rounded-lg
     }
 }
