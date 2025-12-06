@@ -20,7 +20,7 @@ const Gallery = () => {
 
             {selectedIllust && (
                 <Overlay
-                    illustration={selectedIllust}
+                    illustration={ selectedIllust }
                     onClick={() => setSelectedIllust(null)}
                 />
             )}
