@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ILLUST from "./illust.js"
 import Illustration from "./Illustration.jsx"
+import FocusIllustration from "./FocusIllustration.jsx";
 import Overlay from "./Overlay";
 
 const Gallery = () => {
@@ -19,10 +20,9 @@ const Gallery = () => {
             </div>
 
             {selectedIllust && (
-                <Overlay
-                    illustration={ selectedIllust }
-                    onClick={() => setSelectedIllust(null)}
-                />
+                <Overlay onClick={() => setSelectedIllust(null)}>
+                    <FocusIllustration illustration={selectedIllust} />
+                </Overlay>
             )}
         </div>
     );

@@ -1,0 +1,29 @@
+import Overlay from "./Overlay.jsx";
+
+const Sidebar = (props) => {
+    const { isOpen, onClose} = props;
+
+    return (
+        <div>
+            {isOpen && (
+                <div onClick={onClose}>
+                    <Overlay />
+                </div>
+            )}
+            <aside className={`
+                sidebar md:w-1/5 move-from-left
+                ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+            `}>
+                <div>
+                    <button
+                        className="ml-5 mt-3"
+                        onClick={onClose}>
+                        <i className="fa-solid fa-bars text-xl xl:text-2xl"></i>
+                    </button>
+                </div>
+            </aside>
+        </div>
+    );
+}
+
+export default Sidebar;

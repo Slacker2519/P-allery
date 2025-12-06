@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Header from './Header';
 import Body from './Body';
-import { useState } from "react";
 
 function App() {
     const [theme, setTheme] = useState("dark");
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [searchOpen, setSearchOpen] = useState(false);
 
     return (
         <div className={`
@@ -12,12 +14,17 @@ function App() {
                 flex flex-col
             `}>
             <Header
-                onClick={() => {
+                onToggleDarkMode={() => {
                     theme === "dark" ? setTheme("") : setTheme("dark");
                 }}
-                theme={ theme }
+                onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+                onToggleSearch={() => setSearchOpen(!searchOpen)}
+                theme={theme}
             />
-            <Body />
+            <Body
+                sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}
+                searchOpen={searchOpen} setSearchOpen={setSearchOpen}
+            />
         </div>
     );
 }

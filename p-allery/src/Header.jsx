@@ -1,30 +1,31 @@
 import { FiSun } from "react-icons/fi";
 import { FiMoon } from "react-icons/fi";
+import SearchBar from "./SearchBar.jsx"
 
 const Header = (props) => {
-    const { onClick, theme } = props;
+    const { onToggleDarkMode, onToggleSidebar, onToggleSearch, theme } = props;
 
     return (
         <div className="header">
-            <button>
+            <button onClick={onToggleSidebar}>
                 <i className="fa-solid fa-bars text-xl xl:text-2xl"></i>
             </button>
-            <div className="hidden md:flex search-bar">
-                <i className="fa-solid fa-magnifying-glass text-xl m-2"></i>
-                <input type="text" className="w-xl outline-none"/>
-            </div>
+            <SearchBar
+                isHidden={true}
+                width="w-xl" height="h-10"
+            />
             <div className="flex items-center gap-5">
                 <button className="hidden md:inline-block">
                     <i className="fa-solid fa-user text-2xl"></i>
                 </button>
                 <div className="md:hidden">
-                    <button>
-                        <i className="fa-solid fa-magnifying-glass text-xl m-2"></i>
+                    <button onClick={onToggleSearch}>
+                        <i className="fa-solid fa-magnifying-glass text-xl mt-2"></i>
                     </button>
                 </div>
                 <button
                     className="icon"
-                    onClick={onClick}
+                    onClick={onToggleDarkMode}
                 >
                     {
                         theme === "dark" ?
